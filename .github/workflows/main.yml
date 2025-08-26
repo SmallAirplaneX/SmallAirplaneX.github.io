@@ -6,29 +6,23 @@ on:
 
 jobs:
   build-and-deploy:
-    runs-on: ubuntu-latest
-
+    runs-on: ubuntu-22.04
+    strategy:
+      matrix:
+        node-version: [20]
     steps:
-      # 第一步：获取代码
-      - name: Checkout code
-        uses: actions/checkout@v4
-
-      # 第二步：设置指定版本的 Node.js
-      - name: Setup Node.js
+      - uses: actions/checkout@v4
+      - name: Install pnpm
+        uses: pnpm/action-setup@v4
+        with:
+          version: 10
+      - name: Use Node.js ${{ matrix.node-version }}
         uses: actions/setup-node@v4
         with:
-          node-version: '22.11.0' # Node版本
-          cache: 'pnpm' # 为 pnpm 设置缓存以加速构建
-
-      # 第三步：安装 pnpm
-      - name: Setup pnpm
-        uses: pnpm/action-setup@v3
-        with:
-          version: 10.13.1 # 建议指定一个 pnpm 版本，例如 8.x
-
-      # 第四步：安装依赖
+          node-version: ${{ matrix.node-version }}
+          cache: "pnpm"
       - name: Install dependencies
-        run: pnpm install --frozen-lockfile
+        run: pnpm install
 
       # 第五步：执行构建
       - name: Build project
@@ -36,7 +30,7 @@ jobs:
 
       # 第六步：部署到 GitHub Pages
       - name: Deploy to GitHub Pages
-        uses: peaceiris/actions-gh-pages@v3
+        uses: peaceiris/actions-gh-pages@v4
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./dist # 确保这是你的构建输出目录
