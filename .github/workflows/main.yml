@@ -23,12 +23,8 @@ jobs:
           cache: "pnpm"
       - name: Install dependencies
         run: pnpm install
-
-      # 第五步：执行构建
       - name: Build project
         run: pnpm run build
-
-      # 第六步：部署到 GitHub Pages
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v4
         with:
