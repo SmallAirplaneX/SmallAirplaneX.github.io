@@ -1,12 +1,9 @@
 <script setup lang="ts">
-import { ref } from "vue";
-
-const text = ref("");
+import ProseMirrorEditor from "./components/ProseMirrorEditor.vue";
 </script>
 
 <template>
-  <h1>文本输入</h1>
-  <input type="text" v-model="text" />
+  <ProseMirrorEditor />
 </template>
 
 <style scoped></style>
