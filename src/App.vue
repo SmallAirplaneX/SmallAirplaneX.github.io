@@ -1,9 +1,13 @@
-<script setup lang="ts">
-import ProseMirrorEditor from "./components/ProseMirrorEditor.vue";
-</script>
-
 <template>
-  <ProseMirrorEditor />
+  <AppProvider>
+    <router-view v-slot="{ Component }">
+      <component :is="Component" />
+    </router-view>
+  </AppProvider>
 </template>
+
+<script setup lang="ts">
+import AppProvider from "@/components/AppProvider.vue";
+</script>
 
 <style scoped></style>

@@ -1,0 +1,20 @@
+{
+  "app": {
+    "title": "My App",
+    "home": "Home",
+    "about": "About",
+    "editor": "Editor",
+    "language": "Language",
+    "theme": "Theme",
+    "light": "Light",
+    "dark": "Dark"
+  },
+  "home": {
+    "welcome": "Welcome to Home",
+    "description": "This is an application built with Vue 3 + TypeScript + Vite"
+  },
+  "about": {
+    "title": "About Us",
+    "description": "This is the about page"
+  }
+}

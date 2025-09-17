@@ -1,0 +1,20 @@
+{
+  "app": {
+    "title": "我的应用",
+    "home": "首页",
+    "about": "关于",
+    "editor": "编辑器",
+    "language": "语言",
+    "theme": "主题",
+    "light": "浅色",
+    "dark": "深色"
+  },
+  "home": {
+    "welcome": "欢迎来到首页",
+    "description": "这是一个使用 Vue 3 + TypeScript + Vite 构建的应用"
+  },
+  "about": {
+    "title": "关于我们",
+    "description": "这是关于页面"
+  }
+}

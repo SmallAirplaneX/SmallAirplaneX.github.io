@@ -82,7 +82,7 @@ class BlockTooltip {
         return;
       let map = tr.mapping.maps[last];
       let end: number | null = null;
-      map.forEach((_from, _to, _newFrom, newTo) => {
+      map!.forEach((_from, _to, _newFrom, newTo) => {
         if (end == null) end = newTo;
       });
       tr.setSelection(Selection.near(tr.doc.resolve(end!), bias));
