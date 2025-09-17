@@ -52,9 +52,9 @@ const switchTheme = inject("switchTheme", (themeId: string) => {
   console.log("Switch theme to:", themeId);
 });
 
-const emitToggle = () => {
-  emit("toggle");
-};
+// const emitToggle = () => {
+//   emit("toggle");
+// };
 
 const navigateTo = (path: string) => {
   router.push(path);

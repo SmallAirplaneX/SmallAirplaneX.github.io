@@ -16,7 +16,7 @@ import {
   type Theme,
 } from "@/theme";
 
-const { locale, t } = useI18n();
+const { locale } = useI18n();
 
 // 提供主题状态
 const currentTheme = ref<Theme>(getTheme(loadTheme()));
