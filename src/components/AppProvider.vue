@@ -5,7 +5,7 @@
 </template>
 
 <script setup lang="ts">
-import { onMounted, provide, ref } from "vue";
+import { onMounted, provide } from "vue";
 import { useI18n } from "vue-i18n";
 import { applyTheme, saveTheme, loadTheme } from "@/theme";
 

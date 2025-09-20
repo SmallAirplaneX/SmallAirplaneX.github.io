@@ -1,40 +1,9 @@
 <script setup lang="ts">
-import { useRouter } from "vue-router";
-import { ref, inject, onMounted } from "vue";
-import Button from "./Button.vue";
-
-const router = useRouter();
 const emit = defineEmits(["toggle"]);
-
-const currentThemeId = ref("light");
-const switchTheme = inject("switchTheme", (themeId: string) => {
-  console.log("Switch theme to:", themeId);
-});
 
 // const emitToggle = () => {
 //   emit("toggle");
 // };
-
-const navigateTo = (path: string) => {
-  router.push(path);
-};
-
-const toggleTheme = () => {
-  if (!document.startViewTransition) {
-    // 浏览器不支持 View Transitions API
-    const newThemeId = currentThemeId.value === "light" ? "dark" : "light";
-    currentThemeId.value = newThemeId;
-    switchTheme(newThemeId);
-    return;
-  }
-
-  // 使用 View Transitions API 实现平滑过渡
-  document.startViewTransition(() => {
-    const newThemeId = currentThemeId.value === "light" ? "dark" : "light";
-    currentThemeId.value = newThemeId;
-    switchTheme(newThemeId);
-  });
-};
 </script>
 <template>
   <nav class="navigation-bar">

@@ -11,35 +11,7 @@ const meta: Meta<typeof Button> = {
   title: "Components/Button",
   component: Button,
   tags: ["autodocs"],
-  argTypes: {
-    variant: {
-      control: "select",
-      options: ["primary", "secondary", "accent", "ghost"],
-      description: "按钮变体样式",
-      table: {
-        defaultValue: { summary: "primary" },
-      },
-    },
-    size: {
-      control: "select",
-      options: ["sm", "md", "lg"],
-      description: "按钮尺寸",
-      table: {
-        defaultValue: { summary: "md" },
-      },
-    },
-    disabled: {
-      control: "boolean",
-      description: "是否禁用按钮",
-      table: {
-        defaultValue: { summary: "false" },
-      },
-    },
-    onClick: {
-      action: "clicked",
-      description: "点击事件回调",
-    },
-  },
+  argTypes: {},
   parameters: {
     layout: "centered",
     docs: {
@@ -86,9 +58,7 @@ type Story = StoryObj<typeof Button>;
  * 主要按钮 - 用于主要操作
  */
 export const Primary: Story = {
-  args: {
-    variant: "primary",
-  },
+  args: {},
   render: (args) => ({
     components: { Button },
     setup() {
@@ -102,9 +72,7 @@ export const Primary: Story = {
  * 次要按钮 - 用于次要操作
  */
 export const Secondary: Story = {
-  args: {
-    variant: "secondary",
-  },
+  args: {},
   render: (args) => ({
     components: { Button },
     setup() {
@@ -118,9 +86,7 @@ export const Secondary: Story = {
  * 强调按钮 - 用于需要特别关注的操作
  */
 export const Accent: Story = {
-  args: {
-    variant: "accent",
-  },
+  args: {},
   render: (args) => ({
     components: { Button },
     setup() {
@@ -134,9 +100,7 @@ export const Accent: Story = {
  * 幽灵按钮 - 用于背景复杂的场景
  */
 export const Ghost: Story = {
-  args: {
-    variant: "ghost",
-  },
+  args: {},
   render: (args) => ({
     components: { Button },
     setup() {
@@ -150,9 +114,7 @@ export const Ghost: Story = {
  * 小尺寸按钮 - 用于紧凑的界面
  */
 export const Small: Story = {
-  args: {
-    size: "sm",
-  },
+  args: {},
   render: (args) => ({
     components: { Button },
     setup() {
@@ -166,9 +128,7 @@ export const Small: Story = {
  * 大尺寸按钮 - 用于需要突出显示的界面
  */
 export const Large: Story = {
-  args: {
-    size: "lg",
-  },
+  args: {},
   render: (args) => ({
     components: { Button },
     setup() {
@@ -182,9 +142,7 @@ export const Large: Story = {
  * 禁用状态按钮 - 不可交互状态
  */
 export const Disabled: Story = {
-  args: {
-    disabled: true,
-  },
+  args: {},
   render: (args) => ({
     components: { Button },
     setup() {
