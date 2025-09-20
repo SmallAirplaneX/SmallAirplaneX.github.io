@@ -1,1 +1,0 @@
-import{d as o,m as s,c as l,a as t,t as a,l as n,o as r}from"./index-BruAyH3w.js";const _=o({__name:"AboutPage",setup(c){const{t:e}=s();return(u,p)=>(r(),l("div",null,[t("h1",null,a(n(e)("about.title")),1),t("p",null,a(n(e)("about.description")),1)]))}});export{_ as default};
