@@ -1,5 +1,5 @@
 import { createApp } from "vue";
-import "./style.css";
+import "./styles/style.css";
 import App from "@/App.vue";
 import { setupRouter } from "@/router"; //引入路由启动器
 import { setupPinia } from "@/store"; //引入状态管理启动器

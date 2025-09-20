@@ -3,3 +3,11 @@
 declare module "@/*" {
   export default any;
 }
+
+declare module "@com/*" {
+  export default any;
+}
+
+declare module "@components/*" {
+  export default any;
+}

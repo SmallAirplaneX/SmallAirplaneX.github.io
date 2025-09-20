@@ -7,32 +7,20 @@
 <script setup lang="ts">
 import { onMounted, provide, ref } from "vue";
 import { useI18n } from "vue-i18n";
-import {
-  getTheme,
-  applyTheme,
-  saveTheme,
-  loadTheme,
-  themes,
-  type Theme,
-} from "@/theme";
+import { applyTheme, saveTheme, loadTheme } from "@/theme";
 
 const { locale } = useI18n();
 
 // 提供主题状态
-const currentTheme = ref<Theme>(getTheme(loadTheme()));
-provide("currentTheme", currentTheme);
+const themes = ["light", "dark"];
+provide("themes", themes);
 
 // 提供切换主题的方法
-const switchTheme = (themeId: string) => {
-  const theme = getTheme(themeId);
-  currentTheme.value = theme;
-  saveTheme(themeId);
+const setTheme = (theme: string) => {
   applyTheme(theme);
+  saveTheme(theme);
 };
-provide("switchTheme", switchTheme);
-
-// 提供可用主题列表
-provide("themes", themes);
+provide("setTheme", setTheme);
 
 // 提供语言切换方法
 const switchLanguage = (lang: string) => {
@@ -53,9 +41,7 @@ onMounted(() => {
   }
 
   // 初始化主题
-  const savedThemeId = loadTheme();
-  currentTheme.value = getTheme(savedThemeId);
-  applyTheme(currentTheme.value);
+  applyTheme(loadTheme());
 });
 </script>
 

@@ -14,6 +14,12 @@
     "paths": {
       "@/*": [
         "src/*"
+      ],
+      "@com/*": [
+        "src/components/*"
+      ],
+      "@components/*": [
+        "src/components/*"
       ]
     }
   },

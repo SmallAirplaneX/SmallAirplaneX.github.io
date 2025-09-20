@@ -1,44 +1,3 @@
-<template>
-  <nav class="navigation-bar">
-    <div class="nav-container">
-      <div class="nav-left">
-        <!-- <Button class="nav-toggle" size="sm" @click="emitToggle">☰</Button> -->
-        <img
-          src="http://q1.qlogo.cn/g?b=qq&nk=2321764325&s=640"
-          alt=""
-          width="45"
-          height="45"
-          style="border-radius: 50%" />
-        <router-link to="/" class="nav-brand"> 今晚踢被子 </router-link>
-      </div>
-      <div class="nav-menu">
-        <Button variant="ghost" size="sm" @click="navigateTo('/')">首页</Button>
-        <Button variant="ghost" size="sm" @click="navigateTo('/node')"
-          >Node页面</Button
-        >
-        <Button variant="ghost" size="sm" @click="navigateTo('/about')"
-          >关于</Button
-        >
-        <button
-          class="theme-toggle"
-          @click="toggleTheme"
-          :data-theme="currentThemeId">
-          <span
-            class="theme-icon"
-            :class="{ active: currentThemeId === 'light' }"
-            >☀️</span
-          >
-          <span
-            class="theme-icon"
-            :class="{ active: currentThemeId === 'dark' }"
-            >🌙</span
-          >
-        </button>
-      </div>
-    </div>
-  </nav>
-</template>
-
 <script setup lang="ts">
 import { useRouter } from "vue-router";
 import { ref, inject, onMounted } from "vue";
@@ -76,22 +35,65 @@ const toggleTheme = () => {
     switchTheme(newThemeId);
   });
 };
-
-// 初始化主题
-onMounted(() => {
-  const savedTheme = localStorage.getItem("theme");
-  if (savedTheme) {
-    currentThemeId.value = savedTheme;
-  }
-});
 </script>
+<template>
+  <nav class="navigation-bar">
+    <div class="nav-container">
+      <!-- <div class="nav-left">
+        <img
+          src="http://q1.qlogo.cn/g?b=qq&nk=2321764325&s=640"
+          alt=""
+          width="45"
+          height="45"
+          style="border-radius: 50%" />
+        <router-link to="/" class="nav-brand"> 今晚踢被子 </router-link>
+      </div>
+      <div class="nav-menu">
+        <Button type="text" @click="navigateTo('/')">
+          <svg
+            width="20"
+            height="20"
+            xmlns="http://www.w3.org/2000/svg"
+            xmlns:xlink="http://www.w3.org/1999/xlink"
+            viewBox="0 0 20 20">
+            <g fill="none">
+              <path
+                d="M8.998 2.388a1.5 1.5 0 0 1 2.005 0l5.5 4.942A1.5 1.5 0 0 1 17 8.445V15.5a1.5 1.5 0 0 1-1.5 1.5H13a1.5 1.5 0 0 1-1.5-1.5V12a.5.5 0 0 0-.5-.5H9a.5.5 0 0 0-.5.5v3.5A1.5 1.5 0 0 1 7 17H4.5A1.5 1.5 0 0 1 3 15.5V8.445c0-.425.18-.83.498-1.115l5.5-4.942zm1.336.744a.5.5 0 0 0-.668 0l-5.5 4.942A.5.5 0 0 0 4 8.445V15.5a.5.5 0 0 0 .5.5H7a.5.5 0 0 0 .5-.5V12A1.5 1.5 0 0 1 9 10.5h2a1.5 1.5 0 0 1 1.5 1.5v3.5a.5.5 0 0 0 .5.5h2.5a.5.5 0 0 0 .5-.5V8.445a.5.5 0 0 0-.166-.371l-5.5-4.942z"
+                fill="currentColor"></path>
+            </g>
+          </svg>
+        </Button>
+        <Button variant="ghost" size="sm" @click="navigateTo('/node')"
+          >Node页面</Button
+        >
+        <Button variant="ghost" size="sm" @click="navigateTo('/about')"
+          >关于</Button
+        >
+        <button
+          class="theme-toggle"
+          @click="toggleTheme"
+          :data-theme="currentThemeId">
+          <span
+            class="theme-icon"
+            :class="{ active: currentThemeId === 'light' }"
+            >☀️</span
+          >
+          <span
+            class="theme-icon"
+            :class="{ active: currentThemeId === 'dark' }"
+            >🌙</span
+          >
+        </button>
+      </div> -->
+    </div>
+  </nav>
+</template>
 
 <style scoped>
 .navigation-bar {
   /* background: linear-gradient(145deg, #1f2937, #111827); */
   padding: 0 20px;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
-  border-bottom: 1px solid rgba(255, 215, 0, 0.2);
+  border-bottom: #00000073 solid 1px;
 }
 
 .nav-container {
@@ -111,7 +113,7 @@ onMounted(() => {
 }
 
 .nav-brand {
-  /* color: linear-gradient(145deg, #9090cfdc, #8f520cdc); */
+  color: oklch(0.7368 0.1825 335.43);
   font-size: 1.5rem;
   font-weight: 700;
   text-decoration: none;
@@ -120,7 +122,7 @@ onMounted(() => {
 }
 
 .nav-brand:hover {
-  color: #ff9a8d;
+  color: oklch(0.7368 0.1825 54.48);
   text-shadow: 0 0 2px rgba(255, 215, 0, 0.5);
 }
 

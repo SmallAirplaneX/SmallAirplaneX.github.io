@@ -1,0 +1,9 @@
+:root,
+[data-theme="light"] {
+  --background: oklch(100% 0 0);
+  --text: oklch(0% 0 0);
+}
+
+[data-theme="dark"] {
+  --background: oklch(0% 0 0);
+}

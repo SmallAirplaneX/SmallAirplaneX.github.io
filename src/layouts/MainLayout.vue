@@ -33,7 +33,7 @@ import { ref } from "vue";
 import NavigationBar from "@/components/NavigationBar.vue";
 import Button from "@/components/Button.vue";
 
-const isNavCollapsed = ref(false);
+const isNavCollapsed = ref(true);
 const isSidebarCollapsed = ref(false);
 
 const toggleNavigation = () => {

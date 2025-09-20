@@ -33,6 +33,11 @@ export const basicRoutes = [
       },
     ],
   },
+  {
+    name: "colordemo",
+    path: "/color",
+    component: () => import("@com/ColorDemo.vue"),
+  },
   // 404 页面重定向
   {
     path: "/:pathMatch(.*)*",
