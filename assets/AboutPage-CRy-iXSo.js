@@ -1,0 +1,1 @@
+import{d as o,i as s,c as r,a as t,t as a,u as n,o as u}from"./index-B9rNH-u5.js";const _=o({__name:"AboutPage",setup(c){const{t:e}=s();return(l,i)=>(u(),r("div",null,[t("h1",null,a(n(e)("about.title")),1),t("p",null,a(n(e)("about.description")),1)]))}});export{_ as default};
