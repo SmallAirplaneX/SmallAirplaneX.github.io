@@ -35,7 +35,7 @@ const uploadFile = async () => {
 
   const file = selectedFile.value;
   const fileName = encodeURIComponent(file.name);
-  const CHUNK_SIZE = 300 * 1024 * 1024; // 300MB
+  const CHUNK_SIZE = 100 * 1024 * 1024; // 300MB
   const totalChunks = Math.ceil(file.size / CHUNK_SIZE);
 
   if (totalChunks === 1) {
