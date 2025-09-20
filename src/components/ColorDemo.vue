@@ -152,9 +152,7 @@ const downloadFile = async () => {
 
     while (true) {
       const chunkName = `${fileName}.part${chunkIndex}`;
-      const chunkUrl = `https://r2.buzhidao.net/${encodeURIComponent(
-        chunkName
-      )}`;
+      const chunkUrl = `https://r2.buzhidao.net/${chunkName}`;
 
       try {
         const response = await fetch(chunkUrl, { method: "GET" });
@@ -209,7 +207,7 @@ const downloadFile = async () => {
 // 下载单个分片
 const downloadChunk = async (fileName, chunkNum) => {
   const chunkName = `${fileName}.part${chunkNum}`;
-  const chunkUrl = `https://r2.buzhidao.net/${encodeURIComponent(chunkName)}`;
+  const chunkUrl = `https://r2.buzhidao.net/${chunkName}`;
 
   const response = await fetch(chunkUrl);
   if (!response.ok) {
@@ -269,7 +267,7 @@ const downloadSingleFile = async (fileName) => {
         大小: {{ (selectedFile.size / 1024 / 1024).toFixed(2) }} MB
         <div v-if="Math.ceil(selectedFile.size / (300 * 1024 * 1024)) > 1">
           (将分成
-          {{ Math.ceil(selectedFile.size / (300 * 1024 * 1024)) }} 个分片上传)
+          {{ Math.ceil(selectedFile.size / CHUNK_SIZE) }} 个分片上传)
         </div>
       </div>
     </div>
