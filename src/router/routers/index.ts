@@ -34,9 +34,9 @@ export const basicRoutes = [
     ],
   },
   {
-    name: "colordemo",
-    path: "/color",
-    component: () => import("@com/ColorDemo.vue"),
+    name: "pan",
+    path: "/pan",
+    component: () => import("@com/Pan.vue"),
   },
   // 404 页面重定向
   {
