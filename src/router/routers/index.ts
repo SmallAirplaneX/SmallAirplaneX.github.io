@@ -38,6 +38,11 @@ export const basicRoutes = [
     path: "/pan",
     component: () => import("@com/Pan.vue"),
   },
+  {
+    name: "vido",
+    path: "/vido",
+    component: () => import("@/page/VidoPage.vue"),
+  },
   // 404 页面重定向
   {
     path: "/:pathMatch(.*)*",

@@ -10,9 +10,9 @@
       <!-- 左侧边栏 -->
       <div class="sidebar" :class="{ collapsed: isSidebarCollapsed }">
         <div class="sidebar-header">
-          <Button class="toggle-btn" size="sm" @click="toggleSidebar">
+          <!-- <Button class="toggle-btn" size="sm" @click="toggleSidebar">
             {{ isSidebarCollapsed ? "→" : "←" }}
-          </Button>
+          </Button> -->
           <span v-if="!isSidebarCollapsed">侧边栏</span>
         </div>
         <div class="sidebar-content" v-if="!isSidebarCollapsed">
@@ -34,7 +34,7 @@ import NavigationBar from "@/components/NavigationBar.vue";
 import Button from "@/components/Button.vue";
 
 const isNavCollapsed = ref(true);
-const isSidebarCollapsed = ref(false);
+const isSidebarCollapsed = ref(true);
 
 const toggleNavigation = () => {
   isNavCollapsed.value = !isNavCollapsed.value;

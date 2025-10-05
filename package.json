@@ -12,6 +12,7 @@
   },
   "dependencies": {
     "culori": "^4.0.2",
+    "dplayer": "^1.27.1",
     "pinia": "^3.0.3",
     "prosemirror-commands": "^1.7.1",
     "prosemirror-example-setup": "^1.2.3",
