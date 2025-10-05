@@ -1,1 +1,0 @@
-import{d as o,h as s,c as r,a as t,t as a,u as n,o as u}from"./index-DGVvU5mU.js";const _=o({__name:"AboutPage",setup(c){const{t:e}=s();return(l,p)=>(u(),r("div",null,[t("h1",null,a(n(e)("about.title")),1),t("p",null,a(n(e)("about.description")),1)]))}});export{_ as default};
