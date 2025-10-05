@@ -31,17 +31,12 @@
 <script setup lang="ts">
 import { ref } from "vue";
 import NavigationBar from "@/components/NavigationBar.vue";
-import Button from "@/components/Button.vue";
 
 const isNavCollapsed = ref(true);
 const isSidebarCollapsed = ref(true);
 
 const toggleNavigation = () => {
   isNavCollapsed.value = !isNavCollapsed.value;
-};
-
-const toggleSidebar = () => {
-  isSidebarCollapsed.value = !isSidebarCollapsed.value;
 };
 </script>
 
