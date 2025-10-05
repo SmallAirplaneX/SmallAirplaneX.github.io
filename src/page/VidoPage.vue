@@ -195,7 +195,7 @@ const initPlayer = () => {
       container: playerContainer.value,
       video: {
         url: currentVideo.value.url,
-        type: "normal",
+        type: "hls",
       },
       autoplay: false,
       theme: "#b7daff",
